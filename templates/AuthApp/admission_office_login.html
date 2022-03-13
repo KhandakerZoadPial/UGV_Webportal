@@ -1,0 +1,31 @@
+{% extends 'AuthApp/base.html' %}
+
+
+{% block title %}
+<title>Admission Office Login</title>
+{% endblock title %}
+
+
+{% block body %}
+<br>
+
+<div class="container col-md-5">
+    <h1 style="text-align: center;">Admission Office Login</h1>
+    <br>
+    <div class="card container">
+        <form action="{% url 'admission_office_login' %}" method="post" class="mt-4 mb-4">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="exampleInputEmail1">Employee ID:</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" required>
+                <small id="emailHelp" class="form-text text-muted">Put Your Employee ID</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-outline-danger">Login</button>
+        </form>
+    </div>
+</div>
+{% endblock body %}
